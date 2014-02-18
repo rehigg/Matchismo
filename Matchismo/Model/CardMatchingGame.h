@@ -17,7 +17,7 @@
                         usingDeck:(Deck *)deck
                      cardsToMatch:(NSUInteger)cardsToMatch;
 
-- (void)chooseCardAtIndex:(NSUInteger)index;
+- (Card *)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) NSInteger score;

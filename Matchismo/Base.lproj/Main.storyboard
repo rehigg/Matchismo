@@ -179,29 +179,34 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="jsd-Qc-blk">
-                                <rect key="frame" x="162" y="414" width="118" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards to Match" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4X-bR-LC0">
-                                <rect key="frame" x="8" y="420" width="125" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards to Match: 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4X-bR-LC0">
+                                <rect key="frame" x="10" y="416" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-vV-eAI">
-                                <rect key="frame" x="10" y="391" width="42" height="21"/>
+                                <rect key="frame" x="11" y="383" width="298" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-q1-Pq8">
+                                <rect key="frame" x="214" y="412" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="cardsToMatchStep:" destination="vXZ-lx-hvc" eventType="valueChanged" id="9Ql-bV-zyV"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="cardInfoLabel" destination="DCs-vV-eAI" id="rzf-FO-dgS"/>
-                        <outlet property="numberOfCardsToMatch" destination="jsd-Qc-blk" id="5T6-ya-kYa"/>
+                        <outlet property="cardsToMatchLabel" destination="A4X-bR-LC0" id="rDA-dQ-GvV"/>
+                        <outlet property="matchCountStepper" destination="BAf-q1-Pq8" id="owh-Lj-pBO"/>
                         <outlet property="scoreLabel" destination="0EK-xM-B92" id="ebN-QO-5bB"/>
                         <outletCollection property="cardButtons" destination="uYr-lz-Jan" id="r1d-wU-R9G"/>
                         <outletCollection property="cardButtons" destination="dAE-Jl-Jo0" id="jY3-fY-Gkn"/>

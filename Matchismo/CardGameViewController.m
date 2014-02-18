@@ -15,18 +15,26 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UISlider *numberOfCardsToMatch;
+@property (nonatomic) NSUInteger numberOfCardsToMatch;
 @property (weak, nonatomic) IBOutlet UILabel *cardInfoLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *matchCountStepper;
+@property (weak, nonatomic) IBOutlet UILabel *cardsToMatchLabel;
 @end
 
 @implementation CardGameViewController
+
+- (NSUInteger)numberOfCardsToMatch
+{
+    if(!_numberOfCardsToMatch) _numberOfCardsToMatch = 2;
+    return _numberOfCardsToMatch;
+}
 
 - (CardMatchingGame *)game
 {
     if (!_game) _game = [[CardMatchingGame alloc]
                          initWithCardCount:[self.cardButtons count]
                                 usingDeck:[self createDeck]
-                         cardsToMatch:[self.numberOfCardsToMatch value]];
+                         cardsToMatch:self.numberOfCardsToMatch];
     return _game;
 }
 
@@ -35,11 +43,16 @@
     return [[PlayingCardDeck alloc] init];
 }
 
+- (IBAction)cardsToMatchStep:(id)sender {
+    self.numberOfCardsToMatch = [self.matchCountStepper value];
+    self.cardsToMatchLabel.text = [NSString stringWithFormat:@"Cards to Match: %d", self.numberOfCardsToMatch];
+}
 
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:chosenButtonIndex];
+    Card *card = [self.game chooseCardAtIndex:chosenButtonIndex];
+    self.cardInfoLabel.text = [NSString stringWithFormat:@"%@ card choosen.", card.contents];
     [self updateUI];
 }
 
