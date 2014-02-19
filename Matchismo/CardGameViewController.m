@@ -33,8 +33,7 @@
 {
     if (!_game) _game = [[CardMatchingGame alloc]
                          initWithCardCount:[self.cardButtons count]
-                                usingDeck:[self createDeck]
-                         cardsToMatch:self.numberOfCardsToMatch];
+                         usingDeck:[self createDeck] ];
     return _game;
 }
 
