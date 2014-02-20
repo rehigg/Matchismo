@@ -50,7 +50,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    Card *card = [self.game chooseCardAtIndex:chosenButtonIndex];
+    Card *card = [self.game chooseCardAtIndex:chosenButtonIndex numberOfMatches:self.numberOfCardsToMatch];
     self.cardInfoLabel.text = [NSString stringWithFormat:@"%@ card choosen.", card.contents];
     [self updateUI];
 }

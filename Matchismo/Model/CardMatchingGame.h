@@ -16,9 +16,9 @@
 - (instancetype)initWithCardCount:(NSUInteger)count
                         usingDeck:(Deck *)deck;
 
-- (Card *)chooseCardAtIndex:(NSUInteger)index;
+- (Card *)chooseCardAtIndex:(NSUInteger)index
+            numberOfMatches:(NSUInteger)numberOfMatches;
 - (Card *)cardAtIndex:(NSUInteger)index;
-- (void)matchCards:(NSMutableArray *)choosenCards selectedCard:(Card *)selectedCard;
 
 @property (nonatomic, readonly) NSInteger score;
 

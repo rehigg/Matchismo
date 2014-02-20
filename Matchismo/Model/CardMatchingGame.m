@@ -49,6 +49,7 @@ static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
 
 - (Card *)chooseCardAtIndex:(NSUInteger)index
+            numberOfMatches:(NSUInteger)numberOfMatches
 {
     Card *card = [self cardAtIndex:index];
     if (!card.isMatched) {
@@ -61,15 +62,17 @@ static const int COST_TO_CHOOSE = 1;
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     [choosenCards addObject:otherCard];
                     int matchScore = [card match:@[otherCard]];
-                    if (matchScore) {
-                        self.score += matchScore * MATCH_BONUS;
-                        otherCard.matched = YES;
-                        card.matched = YES;
-                    } else {
-                        self.score -= MISMATCH_PENALTY;
-                        otherCard.chosen = NO;
+                    for (int i = 1; i < numberOfMatches; i++) {
+                        if (matchScore) {
+                            self.score += matchScore * MATCH_BONUS;
+                            otherCard.matched = YES;
+                            card.matched = YES;
+                        } else {
+                            self.score -= MISMATCH_PENALTY;
+                            otherCard.chosen = NO;
+                        }
                     }
-                    break;  //can only choose 2 cards for now
+                    break; 
                 }
             }
             self.score -= COST_TO_CHOOSE;
@@ -79,20 +82,5 @@ static const int COST_TO_CHOOSE = 1;
     return card;
 }
 
-- (void)matchCards:(NSMutableArray *)choosenCards selectedCard:(Card *)selectedCard
-{
-    for (Card *choosenCard in choosenCards) {
-        int matchScore = [selectedCard match:@[choosenCard]];
-        if (matchScore) {
-            self.score += matchScore * MATCH_BONUS;
-            choosenCard.matched = YES;
-            selectedCard.matched = YES;
-        } else {
-            self.score -= MISMATCH_PENALTY;
-            choosenCard.chosen = NO;
-        }
-        break;  //can only choose 2 cards for now
-    }
-}
 
 @end
