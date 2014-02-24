@@ -51,7 +51,7 @@
 {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     Card *card = [self.game chooseCardAtIndex:chosenButtonIndex numberOfMatches:self.numberOfCardsToMatch];
-    self.cardInfoLabel.text = [NSString stringWithFormat:@"%@ card choosen.", card.contents];
+    self.cardInfoLabel.text = self.game.lastActionMessage;
     [self updateUI];
 }
 

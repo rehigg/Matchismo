@@ -19,6 +19,7 @@
 - (Card *)chooseCardAtIndex:(NSUInteger)index
             numberOfMatches:(NSUInteger)numberOfMatches;
 - (Card *)cardAtIndex:(NSUInteger)index;
+- (NSMutableString *)lastActionMessage;
 
 @property (nonatomic, readonly) NSInteger score;
 

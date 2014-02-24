@@ -12,6 +12,7 @@
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards;  //of Card
 @property (nonatomic, readwrite) NSUInteger cardsToMatch;
+@property (nonatomic, strong, readwrite) NSMutableString *lastActionMessage;
 @end
 
 @implementation CardMatchingGame
@@ -67,12 +68,16 @@ static const int COST_TO_CHOOSE = 1;
                             self.score += matchScore * MATCH_BONUS;
                             otherCard.matched = YES;
                             card.matched = YES;
+                            self.lastActionMessage = [NSMutableString stringWithFormat:@"%@ matches %@", card.contents , otherCard.contents];
                         } else {
                             self.score -= MISMATCH_PENALTY;
                             otherCard.chosen = NO;
+                            self.lastActionMessage = [NSMutableString stringWithFormat:@"%@ does not match %@", card.contents , otherCard.contents];
                         }
                     }
-                    break; 
+                    break;
+                } else {
+                    self.lastActionMessage = [NSMutableString stringWithFormat:@"Choose %@.", card.contents];
                 }
             }
             self.score -= COST_TO_CHOOSE;
