@@ -26,6 +26,7 @@
 		B06A0B9118A333CA006F5642 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B06A0B8F18A333CA006F5642 /* InfoPlist.strings */; };
 		B06A0B9318A333CA006F5642 /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B06A0B9218A333CA006F5642 /* MatchismoTests.m */; };
 		B0ABE69018B13402005A22E7 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B0ABE68F18B13402005A22E7 /* CardMatchingGame.m */; };
+		B0D21DB518C2DFC100B61366 /* PlayingCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D21DB418C2DFC100B61366 /* PlayingCardGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		B06A0B9218A333CA006F5642 /* MatchismoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoTests.m; sourceTree = "<group>"; };
 		B0ABE68E18B13402005A22E7 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
 		B0ABE68F18B13402005A22E7 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
+		B0D21DB318C2DFC100B61366 /* PlayingCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardGameViewController.h; sourceTree = "<group>"; };
+		B0D21DB418C2DFC100B61366 /* PlayingCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 		B06A0B6D18A333CA006F5642 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				B0D21DB318C2DFC100B61366 /* PlayingCardGameViewController.h */,
+				B0D21DB418C2DFC100B61366 /* PlayingCardGameViewController.m */,
 				B06A0B7918A333CA006F5642 /* Main.storyboard */,
 				B06A0B7C18A333CA006F5642 /* CardGameViewController.h */,
 				B06A0B7D18A333CA006F5642 /* CardGameViewController.m */,
@@ -285,6 +290,7 @@
 			files = (
 				B020B5E818A9BD22004F668E /* PlayingCard.m in Sources */,
 				B020B5E518A83841004F668E /* Deck.m in Sources */,
+				B0D21DB518C2DFC100B61366 /* PlayingCardGameViewController.m in Sources */,
 				B06A0B7818A333CA006F5642 /* CardGameAppDelegate.m in Sources */,
 				B06A0B7E18A333CA006F5642 /* CardGameViewController.m in Sources */,
 				B0ABE69018B13402005A22E7 /* CardMatchingGame.m in Sources */,

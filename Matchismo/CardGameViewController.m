@@ -7,7 +7,6 @@
 //
 
 #import "CardGameViewController.h"
-#import "PlayingCardDeck.h"
 #import "Card.h"
 #import "CardMatchingGame.h"
 
@@ -37,9 +36,9 @@
     return _game;
 }
 
-- (Deck *)createDeck
+- (Deck *)createDeck  //abstract
 {
-    return [[PlayingCardDeck alloc] init];
+    return nil;
 }
 
 - (IBAction)cardsToMatchStep:(id)sender {
@@ -50,7 +49,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    Card *card = [self.game chooseCardAtIndex:chosenButtonIndex numberOfMatches:self.numberOfCardsToMatch];
+    [self.game chooseCardAtIndex:chosenButtonIndex numberOfMatches:self.numberOfCardsToMatch];
     self.cardInfoLabel.text = self.game.lastActionMessage;
     [self updateUI];
 }
